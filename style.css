@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Creepster', cursive, sans-serif;
+    background: url('horro.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+}
+
+.invitation-card {
+    position: relative;
+    width: 60%;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    
+    z-index: 10;
+}
+
+.front, .inside {
+    display: none;
+}
+
+.front {
+    display: block;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: crimson;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: darkred;
+}
+
+.bats {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.bat {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('https://cdn.pixabay.com/photo/2013/07/12/14/39/bat-148535_1280.png') no-repeat center center;
+    background-size: contain;
+    animation: flyBat 10s linear infinite;
+}
+
+@keyframes flyBat {
+    0% {
+        transform: translateX(-100px) translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) translateY(-200px) scale(0.5);
+        opacity: 0;
+    }
+}
